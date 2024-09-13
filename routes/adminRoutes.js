@@ -14,20 +14,6 @@ router.get('/complaints', adminMiddleware, async (req, res) => {
   }
 });
 
-// Route to update complaint priority
-router.post('/complaints/:id/priority', adminMiddleware, async (req, res) => {
-  try {
-    const complaint = await Complaint.findById(req.params.id);
-    if (complaint) {
-      complaint.priority = req.body.priority;
-      await complaint.save();
-      res.json({ message: "Priority updated" });
-    } else {
-      res.status(404).json({ message: "Complaint not found" });
-    }
-  } catch (err) {
-    res.status(500).json({ message: "Error updating priority" });
-  }
-});
+
 
 module.exports = router;

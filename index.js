@@ -25,7 +25,7 @@ mongoose.connect("mongodb+srv://admin:admin@cluster0.v3hes.mongodb.net/signupDB"
 app.use("/api", userRoutes);
 
 // Use complaint routes
-app.use("/api/complaints", complaintRoutes); // Add the complaints route
+app.use("/api", complaintRoutes); // Add the complaints route
 
 // Start the server
 const PORT = process.env.PORT || 5000;
